@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Peni Wellness</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Georgia',serif;background:#FDF6EC;color:#2C1A0E}
+
+  /* ADINKRA-INSPIRED PATTERN */
+  .adinkra-bg{background-image:radial-gradient(circle,rgba(180,100,30,0.07) 1px,transparent 1px);background-size:28px 28px}
+
+  nav{position:fixed;top:0;width:100%;background:rgba(253,246,236,0.93);backdrop-filter:blur(8px);z-index:100;padding:1.2rem 3rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #E8D5B0}
+  .logo{font-size:1.6rem;letter-spacing:4px;color:#8B3A0F;font-weight:400;font-family:'Georgia',serif}
+  .logo span{color:#C4881A;font-style:italic}
+  .nav-links{display:flex;gap:2rem;list-style:none}
+  .nav-links a{text-decoration:none;font-family:'Helvetica Neue',sans-serif;font-size:0.82rem;letter-spacing:1.5px;color:#6B4C30;text-transform:uppercase;transition:color .3s}
+  .nav-links a:hover{color:#8B3A0F}
+  .nav-cta{background:#8B3A0F;color:#FDF6EC!important;padding:0.5rem 1.5rem;border-radius:50px;transition:background .3s!important}
+  .nav-cta:hover{background:#6B2C0A!important}
+
+  /* HERO */
+  .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:8rem 2rem 5rem;background:#1C0E05;position:relative;overflow:hidden}
+  .hero-pattern{position:absolute;inset:0;opacity:0.06;background-image:repeating-linear-gradient(60deg,#C4881A 0,#C4881A 1px,transparent 0,transparent 50%),repeating-linear-gradient(120deg,#C4881A 0,#C4881A 1px,transparent 0,transparent 50%);background-size:30px 30px}
+  .hero-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(196,136,26,0.18) 0%,transparent 70%)}
+  .hero-content{position:relative;z-index:2}
+  .hero-badge{display:inline-block;border:1px solid rgba(196,136,26,0.5);color:#C4881A;font-family:'Helvetica Neue',sans-serif;font-size:0.72rem;letter-spacing:3px;padding:0.45rem 1.4rem;border-radius:50px;margin-bottom:2rem;text-transform:uppercase}
+  .hero h1{font-size:clamp(3rem,7vw,5.5rem);line-height:1.1;color:#FDF6EC;font-weight:400;margin-bottom:0.5rem}
+  .hero h1 .swahili{color:#C4881A;font-style:italic;display:block;font-size:0.55em;letter-spacing:6px;margin-bottom:0.5rem;font-family:'Helvetica Neue',sans-serif;text-transform:uppercase}
+  .hero h1 .name{font-size:1em}
+  .hero-meaning{font-family:'Helvetica Neue',sans-serif;font-size:0.8rem;color:rgba(196,136,26,0.7);letter-spacing:3px;text-transform:uppercase;margin-bottom:1.5rem}
+  .hero p{font-family:'Helvetica Neue',sans-serif;font-size:1.05rem;color:rgba(253,246,236,0.7);line-height:1.9;max-width:520px;margin:0 auto 2.5rem}
+  .hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+  .btn-primary{background:#C4881A;color:#1C0E05;padding:0.9rem 2.4rem;border-radius:50px;text-decoration:none;font-family:'Helvetica Neue',sans-serif;font-size:0.85rem;letter-spacing:1.5px;text-transform:uppercase;transition:background .3s,transform .2s;font-weight:500}
+  .btn-primary:hover{background:#E0A030;transform:translateY(-2px)}
+  .btn-secondary{background:transparent;color:#FDF6EC;padding:0.9rem 2.4rem;border-radius:50px;text-decoration:none;font-family:'Helvetica Neue',sans-serif;font-size:0.85rem;letter-spacing:1.5px;text-transform:uppercase;border:1px solid rgba(253,246,236,0.35);transition:all .3s}
+  .btn-secondary:hover{border-color:#C4881A;color:#C4881A}
+
+  /* HERO DIVIDER */
+  .divider{width:100%;height:80px;background:#FDF6EC;clip-path:ellipse(55% 100% at 50% 100%)}
+  .divider-dark{width:100%;height:80px;background:#1C0E05;clip-path:ellipse(55% 100% at 50% 100%)}
+
+  /* MEANING STRIP */
+  .meaning-strip{background:#FDF6EC;padding:3rem 2rem;text-align:center}
+  .meaning-strip p{font-family:'Helvetica Neue',sans-serif;font-size:0.8rem;letter-spacing:4px;text-transform:uppercase;color:#8B3A0F}
+  .meaning-strip h2{font-size:clamp(1.4rem,3vw,2rem);color:#2C1A0E;font-weight:400;margin-top:0.5rem;line-height:1.6}
+  .meaning-strip h2 em{color:#8B3A0F}
+
+  /* PILLARS */
+  .features{background:#FDF6EC;padding:5rem 2rem 7rem}
+  .section-header{text-align:center;margin-bottom:4rem}
+  .section-label{font-family:'Helvetica Neue',sans-serif;font-size:0.72rem;letter-spacing:4px;text-transform:uppercase;color:#C4881A;margin-bottom:0.75rem}
+  .section-title{font-size:clamp(2rem,4vw,3rem);font-weight:400;color:#2C1A0E;margin-bottom:1rem}
+  .section-sub{font-family:'Helvetica Neue',sans-serif;font-size:1rem;color:#6B4C30;line-height:1.8;max-width:500px;margin:0 auto}
+  .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto}
+  .feature-card{border-radius:20px;padding:2.5rem 2rem;border:1px solid #E8D5B0;background:#fff;position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s}
+  .feature-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px}
+  .fc1::before{background:linear-gradient(90deg,#8B3A0F,#C4881A)}
+  .fc2::before{background:linear-gradient(90deg,#2A5C3F,#4A9E6A)}
+  .fc3::before{background:linear-gradient(90deg,#C4881A,#E8C060)}
+  .feature-card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(44,26,14,0.1)}
+  .feature-symbol{font-size:2.2rem;margin-bottom:1.2rem;display:block}
+  .feature-card h3{font-size:1.25rem;color:#2C1A0E;margin-bottom:0.4rem;font-weight:400}
+  .feature-card .swahili-tag{font-family:'Helvetica Neue',sans-serif;font-size:0.72rem;letter-spacing:2px;color:#C4881A;text-transform:uppercase;margin-bottom:0.8rem;display:block}
+  .feature-card p{font-family:'Helvetica Neue',sans-serif;font-size:0.93rem;color:#6B4C30;line-height:1.8}
+
+  /* STATS — KENTE-STRIPE INSPIRED */
+  .stats{background:#2C1A0E;padding:5rem 2rem;position:relative;overflow:hidden}
+  .stats::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:repeating-linear-gradient(90deg,#8B3A0F 0,#8B3A0F 40px,#C4881A 40px,#C4881A 80px,#2A5C3F 80px,#2A5C3F 120px,#E8C060 120px,#E8C060 160px)}
+  .stats::after{content:'';position:absolute;bottom:0;left:0;right:0;height:5px;background:repeating-linear-gradient(90deg,#8B3A0F 0,#8B3A0F 40px,#C4881A 40px,#C4881A 80px,#2A5C3F 80px,#2A5C3F 120px,#E8C060 120px,#E8C060 160px)}
+  .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2rem;max-width:900px;margin:0 auto;text-align:center}
+  .stat-num{font-size:3.2rem;color:#C4881A;margin-bottom:0.4rem;font-weight:400}
+  .stat-label{font-family:'Helvetica Neue',sans-serif;font-size:0.8rem;color:#A08060;letter-spacing:2px;text-transform:uppercase}
+
+  /* PHILOSOPHY */
+  .philosophy{background:#F5E8D0;padding:6rem 2rem;adinkra-bg:true}
+  .phil-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+  .phil-symbol{width:200px;height:200px;margin:0 auto;display:flex;align-items:center;justify-content:center;position:relative}
+  .phil-symbol svg{width:100%;height:100%}
+  .phil-text .section-label{text-align:left}
+  .phil-text .section-title{font-size:2rem;text-align:left}
+  .phil-text p{font-family:'Helvetica Neue',sans-serif;font-size:0.95rem;color:#6B4C30;line-height:1.9;margin-top:1rem}
+  .phil-quote{margin-top:1.5rem;padding:1rem 1.5rem;border-left:3px solid #C4881A;font-style:italic;color:#8B3A0F;font-size:1rem;background:rgba(196,136,26,0.06);border-radius:0 8px 8px 0}
+  @media(max-width:700px){.phil-inner{grid-template-columns:1fr}}
+
+  /* TESTIMONIALS */
+  .testimonials{background:#FDF6EC;padding:6rem 2rem}
+  .testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;max-width:1000px;margin:2rem auto 0}
+  .testi-card{background:#fff;border-radius:20px;padding:2rem;border:1px solid #E8D5B0}
+  .testi-stars{color:#C4881A;font-size:0.9rem;margin-bottom:1rem;letter-spacing:3px}
+  .testi-card blockquote{font-size:0.97rem;line-height:1.85;color:#2C1A0E;margin-bottom:1.5rem;font-style:italic}
+  .testi-author{display:flex;align-items:center;gap:12px}
+  .author-avatar{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Helvetica Neue',sans-serif;font-size:0.8rem;font-weight:500;color:#FDF6EC}
+  .av1{background:#8B3A0F}.av2{background:#2A5C3F}.av3{background:#C4881A}
+  .author-name{font-family:'Helvetica Neue',sans-serif;font-size:0.88rem;font-weight:500;color:#2C1A0E}
+  .author-role{font-family:'Helvetica Neue',sans-serif;font-size:0.78rem;color:#A08060}
+
+  /* NEWSLETTER */
+  .newsletter{background:#1C0E05;padding:7rem 2rem;text-align:center;position:relative;overflow:hidden}
+  .newsletter::before{content:'';position:absolute;inset:0;opacity:0.04;background-image:repeating-linear-gradient(60deg,#C4881A 0,#C4881A 1px,transparent 0,transparent 50%),repeating-linear-gradient(120deg,#C4881A 0,#C4881A 1px,transparent 0,transparent 50%);background-size:30px 30px}
+  .newsletter-box{max-width:540px;margin:0 auto;position:relative;z-index:1}
+  .newsletter .section-title{color:#FDF6EC;font-size:2.4rem}
+  .newsletter .section-sub{color:rgba(253,246,236,0.65);margin:1rem auto 0}
+  .email-form{display:flex;gap:0.75rem;margin-top:2.5rem;flex-wrap:wrap;justify-content:center}
+  .email-form input{flex:1;min-width:220px;padding:0.9rem 1.5rem;border-radius:50px;border:1px solid rgba(196,136,26,0.4);background:rgba(253,246,236,0.07);font-family:'Helvetica Neue',sans-serif;font-size:0.9rem;color:#FDF6EC;outline:none;transition:border-color .3s}
+  .email-form input:focus{border-color:#C4881A}
+  .email-form input::placeholder{color:rgba(253,246,236,0.35)}
+  .newsletter-note{font-family:'Helvetica Neue',sans-serif;font-size:0.78rem;color:rgba(253,246,236,0.4);margin-top:1rem}
+
+  footer{background:#120A03;color:#80604A;padding:3rem 3rem 2rem;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;border-top:1px solid rgba(196,136,26,0.15)}
+  .footer-logo{font-size:1.4rem;letter-spacing:4px;color:#C4881A;margin-bottom:0.5rem}
+  .footer-tagline{font-family:'Helvetica Neue',sans-serif;font-size:0.82rem;line-height:1.8;color:#80604A}
+  .footer-links{display:flex;gap:1.8rem;flex-wrap:wrap;align-items:center}
+  .footer-links a{font-family:'Helvetica Neue',sans-serif;font-size:0.82rem;color:#80604A;text-decoration:none;letter-spacing:1px;text-transform:uppercase;transition:color .3s}
+  .footer-links a:hover{color:#C4881A}
+  .footer-bottom{width:100%;border-top:1px solid rgba(255,255,255,0.06);padding-top:1.5rem;margin-top:1rem;font-family:'Helvetica Neue',sans-serif;font-size:0.78rem;text-align:center;color:#5A3A25}
+
+  .fade-in{opacity:0;transform:translateY(24px);transition:opacity .75s ease,transform .75s ease}
+  .fade-in.visible{opacity:1;transform:translateY(0)}
+
+  @media(max-width:640px){
+    nav{padding:1rem 1.5rem}
+    .nav-links{display:none}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">PE<span>NI</span></div>
+  <ul class="nav-links">
+    <li><a href="#features">Pillars</a></li>
+    <li><a href="#philosophy">Ubuntu</a></li>
+    <li><a href="#testimonials">Voices</a></li>
+    <li><a href="#newsletter" class="nav-cta">Begin</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-pattern"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-content fade-in">
+    <div class="hero-badge">Rooted in Africa · Rising in You</div>
+    <h1>
+      <span class="swahili">Jina letu</span>
+      <span class="name">Peni</span>
+    </h1>
+    <p class="hero-meaning">peni /ˈpɛni/ — swahili · "a seed, a beginning, something of great worth"</p>
+    <p>Every great life grows from a single seed. Peni is where your journey inward begins — through ancient African wisdom, embodied movement, and rituals born from the soil of our ancestors.</p>
+    <div class="hero-btns">
+      <a href="#newsletter" class="btn-primary">Plant Your Seed</a>
+      <a href="#features" class="btn-secondary">Discover the Path</a>
+    </div>
+  </div>
+</section>
+
+<!-- MEANING STRIP -->
+<section class="meaning-strip">
+  <div class="fade-in">
+    <p>Our name, our intention</p>
+    <h2>Like a seed planted in <em>fertile earth</em>,<br>wellness is not found — it is grown.</h2>
+  </div>
+</section>
+
+<!-- PILLARS -->
+<section class="features" id="features">
+  <div class="section-header fade-in">
+    <p class="section-label">The three roots</p>
+    <h2 class="section-title">Your path to wholeness</h2>
+    <p class="section-sub">Drawn from the healing traditions of the African continent — Swahili, Yoruba, and Zulu wisdom woven into every practice.</p>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card fc1 fade-in">
+      <span class="feature-symbol">🌍</span>
+      <span class="swahili-tag">Mwili · Body</span>
+      <h3>Grounded Movement</h3>
+      <p>Movement practices inspired by the rhythms of the earth — from ancestral dance flows to breath-led yoga, designed to reconnect you to your body and the land beneath your feet.</p>
+    </div>
+    <div class="feature-card fc2 fade-in">
+      <span class="feature-symbol">🌿</span>
+      <span class="swahili-tag">Chakula · Nourishment</span>
+      <h3>Ancestral Nourishment</h3>
+      <p>Healing through food as our grandmothers knew — moringa, baobab, turmeric, and fermented traditions rediscovered. Whole, sacred, African-rooted nutrition for modern lives.</p>
+    </div>
+    <div class="feature-card fc3 fade-in">
+      <span class="feature-symbol">🌙</span>
+      <span class="swahili-tag">Roho · Spirit</span>
+      <h3>Inner Stillness</h3>
+      <p>Meditation, storytelling, and lunar rituals drawn from the Ubuntu philosophy — "I am because we are." Restore your spirit through community, silence, and sacred rest.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="stats-grid">
+    <div class="fade-in"><div class="stat-num">8k+</div><div class="stat-label">Seeds planted</div></div>
+    <div class="fade-in"><div class="stat-num">12</div><div class="stat-label">African traditions</div></div>
+    <div class="fade-in"><div class="stat-num">96%</div><div class="stat-label">Feel more rooted</div></div>
+    <div class="fade-in"><div class="stat-num">4.9★</div><div class="stat-label">Community rating</div></div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy adinkra-bg" id="philosophy">
+  <div class="phil-inner">
+    <div class="fade-in">
+      <div class="phil-symbol">
+        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Adinkra-inspired Gye Nyame symbol (simplified) -->
+          <circle cx="100" cy="100" r="90" stroke="#C4881A" stroke-width="1.5" stroke-dasharray="8 4" fill="none" opacity="0.4"/>
+          <circle cx="100" cy="100" r="65" stroke="#8B3A0F" stroke-width="1.5" fill="none" opacity="0.3"/>
+          <!-- Stylised seed / Adinkra centre motif -->
+          <ellipse cx="100" cy="100" rx="28" ry="44" stroke="#C4881A" stroke-width="2" fill="rgba(196,136,26,0.1)"/>
+          <ellipse cx="100" cy="100" rx="44" ry="28" stroke="#8B3A0F" stroke-width="2" fill="rgba(139,58,15,0.08)"/>
+          <circle cx="100" cy="100" r="8" fill="#C4881A" opacity="0.8"/>
+          <!-- 4 cardinal petals -->
+          <path d="M100 56 Q112 78 100 100 Q88 78 100 56Z" fill="#C4881A" opacity="0.25"/>
+          <path d="M100 144 Q112 122 100 100 Q88 122 100 144Z" fill="#C4881A" opacity="0.25"/>
+          <path d="M56 100 Q78 112 100 100 Q78 88 56 100Z" fill="#8B3A0F" opacity="0.25"/>
+          <path d="M144 100 Q122 112 100 100 Q122 88 144 100Z" fill="#8B3A0F" opacity="0.25"/>
+          <text x="100" y="190" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#C4881A" opacity="0.7" letter-spacing="3">GYE NYAME</text>
+        </svg>
+      </div>
+    </div>
+    <div class="phil-text fade-in">
+      <p class="section-label">Our philosophy</p>
+      <h2 class="section-title">Ubuntu — I am<br>because we are</h2>
+      <p>Peni is rooted in the African philosophy of Ubuntu — the belief that our wellbeing is inseparable from the wellbeing of those around us. Healing is not a solitary act; it is a communal one, passed down through generations.</p>
+      <div class="phil-quote">"Umuntu ngumuntu ngabantu" — a person is a person through other persons.</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="section-header fade-in">
+    <p class="section-label">Community voices</p>
+    <h2 class="section-title">Stories from the roots</h2>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card fade-in">
+      <div class="testi-stars">★★★★★</div>
+      <blockquote>"Peni gave me language for something I always felt — that my body, my food, my spirit are all connected to something older and deeper."</blockquote>
+      <div class="testi-author">
+        <div class="author-avatar av1">AO</div>
+        <div><div class="author-name">Amara Osei</div><div class="author-role">Wellness coach, Accra</div></div>
+      </div>
+    </div>
+    <div class="testi-card fade-in">
+      <div class="testi-stars">★★★★★</div>
+      <blockquote>"The ancestral nourishment practices changed my relationship with food entirely. I eat with gratitude and intention now. It feels like coming home."</blockquote>
+      <div class="testi-author">
+        <div class="author-avatar av2">NK</div>
+        <div><div class="author-name">Nomsa Khumalo</div><div class="author-role">Teacher, Johannesburg</div></div>
+      </div>
+    </div>
+    <div class="testi-card fade-in">
+      <div class="testi-stars">★★★★★</div>
+      <blockquote>"I never expected a wellness brand to make me proud of my heritage. Peni doesn't just heal the body — it heals identity too."</blockquote>
+      <div class="testi-author">
+        <div class="author-avatar av3">FM</div>
+        <div><div class="author-name">Fatou Mbaye</div><div class="author-role">Entrepreneur, Dakar</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter" id="newsletter">
+  <div class="newsletter-box fade-in">
+    <p class="section-label" style="color:#C4881A;text-align:center">Plant your seed</p>
+    <h2 class="section-title">Begin your journey with Peni</h2>
+    <p class="section-sub">Receive weekly rituals, ancestral recipes, and the wisdom of Ubuntu — delivered with love, free always.</p>
+    <div class="email-form">
+      <input type="email" placeholder="your@email.com"/>
+      <a href="#" class="btn-primary">Join Peni</a>
+    </div>
+    <p class="newsletter-note">No spam, ever. Unsubscribe any time. Asante sana.</p>
+  </div>
+</section>
+
+<footer>
+  <div>
+    <div class="footer-logo">PENI</div>
+    <p class="footer-tagline">Rooted in Africa.<br>Growing in you.</p>
+  </div>
+  <nav class="footer-links">
+    <a href="#features">Pillars</a>
+    <a href="#philosophy">Ubuntu</a>
+    <a href="#testimonials">Voices</a>
+    <a href="#">Privacy</a>
+    <a href="#">Contact</a>
+  </nav>
+  <div class="footer-bottom">© 2026 Peni Wellness. Crafted with Ubuntu. — Nairobi, Kenya</div>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
+  },{threshold:0.1});
+  document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
