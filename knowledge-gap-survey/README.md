@@ -77,7 +77,7 @@ ADMIN_PASSWORD=localtest npx netlify dev --offline
 
 **Auto-deploys are on.** Any push to the `knowledge-gap-survey` branch of stukura/peni-wellness builds and deploys to https://knowledge-gap-survey.netlify.app. Netlify builds from the `knowledge-gap-survey/` base folder. Pushes to other branches are ignored.
 
-This works through a manual Git link: a read-only deploy key on the repo ("Netlify knowledge-gap-survey") plus a GitHub push webhook to `api.netlify.com/hooks/...`.
+This works through a manual Git link. Netlify clones the public repo over HTTPS (no deploy key), and a GitHub push webhook on the repo calls `api.netlify.com/hooks/...`. If you relink the repo in Netlify, the hook URL changes, so update the webhook (repo Settings → Webhooks) to the new `deploy_hook` URL.
 
 To deploy by hand, run this from **this folder**, never from the parent `peniworks` folder (the parent is linked to a different Netlify project):
 
