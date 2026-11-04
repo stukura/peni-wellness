@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>The Knowledge Gap · How ready is your business for the digital economy?</title>
+  <meta name="description" content="An 8-minute interactive survey on technology, digital assets and regulation. Get your personal Digital Readiness Profile.">
+  <meta property="og:title" content="The Knowledge Gap · Digital Readiness Survey">
+  <meta property="og:description" content="How ready is your business for the digital economy? Take the 8-minute survey and get your Readiness Profile.">
+  <meta property="og:image" content="/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0a1024">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <canvas id="bg" aria-hidden="true"></canvas>
+
+  <header class="topbar" id="topbar" hidden>
+    <button class="icon-btn" id="backBtn" aria-label="Previous question">←</button>
+    <nav class="path" id="path" aria-label="Survey progress"></nav>
+    <span class="eta" id="eta" aria-live="polite"></span>
+  </header>
+
+  <main id="app" tabindex="-1" aria-live="polite"></main>
+
+  <footer class="foot">
+    <a href="/privacy.html">Privacy</a>
+    <span>·</span>
+    <span>The Knowledge Gap initiative</span>
+  </footer>
+
+  <canvas id="confetti" aria-hidden="true"></canvas>
+  <script type="module" src="/js/app.js"></script>
+</body>
+</html>

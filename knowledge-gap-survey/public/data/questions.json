@@ -1,0 +1,610 @@
+{
+  "meta": {
+    "title": "The Knowledge Gap",
+    "headline": "How ready is your business for the digital economy?",
+    "purpose": "The Knowledge Gap measures how businesses understand and use technology, what holds them back, and what they know about digital assets, consumer protection and regulation such as the CLARITY Act. Your answers shape education programmes that prepare businesses and communities for what's next.",
+    "promises": ["About 8 minutes", "Insights reported in aggregate", "Get your personal Readiness Profile"],
+    "reportName": "The Knowledge Gap Report: Digital Assets, Consumer Protection & Business Readiness",
+    "consent": "I agree that my answers can be used, in aggregate and without identifying me, for The Knowledge Gap research. Contact details are optional and stored separately from my answers."
+  },
+  "chapters": [
+    {
+      "id": "about",
+      "title": "About you",
+      "hook": "Let's get to know you and your business.",
+      "icon": "👋",
+      "minutes": 1,
+      "insight": {
+        "title": "Did you know?",
+        "body": "Small and medium-sized businesses make up around 90% of businesses worldwide and more than half of all jobs.",
+        "flag": "VERIFY SOURCE"
+      },
+      "items": [
+        {
+          "id": "Q1", "type": "single", "required": true,
+          "prompt": "What best describes you?",
+          "options": [
+            {"v": "student", "l": "Student", "i": "🎓"},
+            {"v": "employee", "l": "Employee / professional", "i": "💼"},
+            {"v": "founder", "l": "Entrepreneur / startup founder", "i": "🚀"},
+            {"v": "owner", "l": "Business owner", "i": "🏪"},
+            {"v": "community", "l": "Community leader", "i": "🤝"},
+            {"v": "techpro", "l": "Technology professional", "i": "💻"},
+            {"v": "investor", "l": "Investor", "i": "📈"},
+            {"v": "other", "l": "Other", "i": "✨", "other": true}
+          ]
+        },
+        {
+          "id": "Q2", "type": "single", "required": true,
+          "prompt": "What industry are you involved in?",
+          "options": [
+            {"v": "realestate", "l": "Real estate", "i": "🏠"},
+            {"v": "media", "l": "Entertainment / media", "i": "🎬"},
+            {"v": "retail", "l": "Retail", "i": "🛍️"},
+            {"v": "manufacturing", "l": "Manufacturing", "i": "🏭"},
+            {"v": "finance", "l": "Finance", "i": "🏦"},
+            {"v": "technology", "l": "Technology", "i": "🖥️"},
+            {"v": "healthcare", "l": "Healthcare", "i": "🩺"},
+            {"v": "education", "l": "Education", "i": "📚"},
+            {"v": "professional", "l": "Professional services", "i": "📋"},
+            {"v": "agriculture", "l": "Agriculture", "i": "🌾"},
+            {"v": "hospitality", "l": "Hospitality / food", "i": "🍽️"},
+            {"v": "logistics", "l": "Transport / logistics", "i": "🚚"},
+            {"v": "nonprofit", "l": "Non-profit", "i": "💚"},
+            {"v": "other", "l": "Other", "i": "✨", "other": true}
+          ]
+        },
+        {
+          "id": "Q3", "type": "single", "required": true, "compact": true,
+          "prompt": "How many people work in your business or organisation?",
+          "options": [
+            {"v": "solo", "l": "Just me"},
+            {"v": "2-10", "l": "2–10"},
+            {"v": "11-50", "l": "11–50"},
+            {"v": "51-250", "l": "51–250"},
+            {"v": "250+", "l": "250+"},
+            {"v": "na", "l": "Not applicable"}
+          ]
+        },
+        {
+          "id": "Q4", "type": "single", "required": true, "compact": true,
+          "prompt": "How long has the business been operating?",
+          "options": [
+            {"v": "prelaunch", "l": "Not launched yet"},
+            {"v": "lt1", "l": "Less than 1 year"},
+            {"v": "1-3", "l": "1–3 years"},
+            {"v": "4-10", "l": "4–10 years"},
+            {"v": "10+", "l": "10+ years"},
+            {"v": "na", "l": "Not applicable"}
+          ]
+        },
+        {
+          "id": "Q5", "type": "country", "required": true,
+          "prompt": "Where are you based?",
+          "help": "City or state is optional."
+        },
+        {
+          "id": "Q6", "type": "single", "required": true,
+          "prompt": "Who mostly handles technology decisions in your business?",
+          "options": [
+            {"v": "me", "l": "Me", "i": "🙋"},
+            {"v": "staff", "l": "A staff member", "i": "🧑‍💻"},
+            {"v": "external", "l": "An external contractor or agency", "i": "🏢"},
+            {"v": "noone", "l": "No one, really", "i": "🤷"},
+            {"v": "na", "l": "Not applicable", "i": "➖"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tech",
+      "title": "Your tech pulse",
+      "hook": "What's in your toolkit today?",
+      "icon": "⚡",
+      "minutes": 2,
+      "insight": {
+        "title": "Did you know?",
+        "body": "Businesses that take most of their payments digitally typically get paid faster and can see their cash flow in real time, without waiting for end-of-day reconciliation.",
+        "flag": "VERIFY SOURCE"
+      },
+      "items": [
+        {
+          "id": "Q7", "type": "scale", "required": true,
+          "prompt": "How would you describe your current knowledge of emerging technologies?",
+          "options": [
+            {"v": 1, "l": "Beginner", "i": "🌱"},
+            {"v": 2, "l": "Basic", "i": "🌿"},
+            {"v": 3, "l": "Intermediate", "i": "🌳"},
+            {"v": 4, "l": "Advanced", "i": "🚀"},
+            {"v": 5, "l": "Expert", "i": "🧠"}
+          ]
+        },
+        {
+          "id": "Q8", "type": "multi", "required": true, "exclusive": ["none"],
+          "prompt": "Which of these does your business use today?",
+          "help": "Pick all that apply.",
+          "options": [
+            {"v": "mobilepay", "l": "Digital / mobile payments"},
+            {"v": "onlinebank", "l": "Online banking"},
+            {"v": "accounting", "l": "Accounting software"},
+            {"v": "ecommerce", "l": "E-commerce store / website"},
+            {"v": "social", "l": "Social media selling (WhatsApp, Instagram)"},
+            {"v": "crm", "l": "CRM / customer database"},
+            {"v": "cloud", "l": "Cloud tools (Google Workspace, Microsoft 365)"},
+            {"v": "ai", "l": "AI tools (ChatGPT, Claude, Copilot…)"},
+            {"v": "pos", "l": "Point-of-sale system"},
+            {"v": "inventory", "l": "Inventory software"},
+            {"v": "ads", "l": "Digital marketing / ads"},
+            {"v": "none", "l": "None of these"},
+            {"v": "other", "l": "Other", "other": true}
+          ]
+        },
+        {
+          "id": "Q9", "type": "scale", "required": true, "allowSkipValue": {"v": "dk", "l": "Don't know"},
+          "prompt": "Roughly what share of your sales or payments happen digitally?",
+          "options": [
+            {"v": 0, "l": "0%", "i": "💵"},
+            {"v": 25, "l": "~25%", "i": "◔"},
+            {"v": 50, "l": "~50%", "i": "◑"},
+            {"v": 75, "l": "~75%", "i": "◕"},
+            {"v": 100, "l": "~100%", "i": "📱"}
+          ]
+        },
+        {
+          "id": "Q10", "type": "single", "required": true, "compact": true,
+          "prompt": "How often do you or your team use AI tools for work?",
+          "options": [
+            {"v": "never", "l": "Never"},
+            {"v": "tried", "l": "Tried once or twice"},
+            {"v": "monthly", "l": "Monthly"},
+            {"v": "weekly", "l": "Weekly"},
+            {"v": "daily", "l": "Daily"}
+          ]
+        },
+        {
+          "id": "Q11", "type": "multi", "required": true,
+          "showIf": {"q": "Q10", "notIn": ["never"]},
+          "prompt": "What do you use AI for?",
+          "help": "Pick all that apply.",
+          "options": [
+            {"v": "writing", "l": "Writing / emails"},
+            {"v": "marketing", "l": "Marketing content"},
+            {"v": "support", "l": "Customer service"},
+            {"v": "research", "l": "Research"},
+            {"v": "data", "l": "Data analysis"},
+            {"v": "coding", "l": "Coding"},
+            {"v": "bookkeeping", "l": "Bookkeeping"},
+            {"v": "design", "l": "Design"},
+            {"v": "other", "l": "Other", "other": true}
+          ]
+        },
+        {
+          "id": "Q12", "type": "thisthat", "required": true,
+          "prompt": "Which feels closer to the truth for your business?",
+          "options": [
+            {"v": "cost", "l": "Technology is mostly a cost", "i": "💸"},
+            {"v": "investment", "l": "Technology is mostly an investment in growth", "i": "🌱"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "challenges",
+      "title": "Challenges",
+      "hook": "What's getting in the way?",
+      "icon": "🧗",
+      "minutes": 1,
+      "insight": {
+        "title": "Quick tip",
+        "body": "Most scams create urgency: \"act now\", \"limited slots\", \"your account will be closed\". Slowing down and checking through a second channel stops a large share of fraud.",
+        "flag": "REVIEW FOR ACCURACY"
+      },
+      "items": [
+        {
+          "id": "Q13", "type": "rank", "required": true, "max": 3,
+          "prompt": "What are your top 3 barriers to adopting new technology?",
+          "help": "Tap in order of importance: 1 is the biggest.",
+          "options": [
+            {"v": "knowledge", "l": "Lack of knowledge", "i": "❓"},
+            {"v": "cost", "l": "Cost", "i": "💰"},
+            {"v": "trustedinfo", "l": "Lack of trusted information", "i": "🔍"},
+            {"v": "regulation", "l": "Regulatory uncertainty", "i": "⚖️"},
+            {"v": "security", "l": "Security concerns", "i": "🔐"},
+            {"v": "skills", "l": "Lack of skilled staff", "i": "🧑‍🔧"},
+            {"v": "infrastructure", "l": "Poor internet or power", "i": "📶"},
+            {"v": "nobenefit", "l": "Don't see the benefit", "i": "🤔"},
+            {"v": "notrelevant", "l": "Not relevant to my business", "i": "🚫"},
+            {"v": "other", "l": "Other", "i": "✨", "other": true}
+          ]
+        },
+        {
+          "id": "Q14", "type": "multi", "required": true, "exclusive": ["none", "pnts"],
+          "prompt": "Has your business experienced any of these in the past 2 years?",
+          "help": "Pick all that apply.",
+          "options": [
+            {"v": "phishing", "l": "Phishing or scam attempt"},
+            {"v": "hacked", "l": "Account hacked"},
+            {"v": "paymentfraud", "l": "Payment fraud"},
+            {"v": "dataloss", "l": "Data loss"},
+            {"v": "fakeparty", "l": "Fake vendor or customer"},
+            {"v": "none", "l": "None of these"},
+            {"v": "pnts", "l": "Prefer not to say"}
+          ]
+        },
+        {
+          "id": "Q15", "type": "single", "required": true, "compact": true,
+          "prompt": "Do businesses currently have enough information to make informed decisions about emerging technologies?",
+          "options": [
+            {"v": "yes", "l": "Yes"},
+            {"v": "no", "l": "No"},
+            {"v": "unsure", "l": "Unsure"}
+          ]
+        },
+        {
+          "id": "Q16", "type": "scale", "required": true,
+          "prompt": "How confident are you that you could tell a legitimate tech or financial product from a scam?",
+          "options": [
+            {"v": 1, "l": "Not at all", "i": "😟"},
+            {"v": 2, "l": "A little", "i": "😕"},
+            {"v": 3, "l": "Somewhat", "i": "😐"},
+            {"v": 4, "l": "Fairly", "i": "🙂"},
+            {"v": 5, "l": "Very", "i": "😎"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assets",
+      "title": "Digital assets",
+      "hook": "Into the world of digital assets.",
+      "icon": "🪙",
+      "minutes": 2,
+      "insight": {
+        "title": "Did you know?",
+        "body": "Stablecoins are increasingly used for cross-border business payments because they can settle in minutes, at any hour, rather than taking days through traditional correspondent banking.",
+        "flag": "VERIFY SOURCE"
+      },
+      "items": [
+        {
+          "id": "Q17", "type": "single", "required": true,
+          "prompt": "Before today, had you heard of digital assets?",
+          "options": [
+            {"v": "yes", "l": "Yes", "i": "👍"},
+            {"v": "no", "l": "No", "i": "🆕"},
+            {"v": "termonly", "l": "I've heard the term but don't understand it", "i": "🤨"}
+          ],
+          "explainer": {
+            "when": {"in": ["no", "termonly"]},
+            "title": "Digital assets in 2 sentences",
+            "body": "A digital asset is anything of value that exists in digital form and can be owned or transferred, such as cryptocurrency, stablecoins or a token that represents a share of a property. Many run on a blockchain: a shared record of who owns what that is very hard to alter."
+          }
+        },
+        {
+          "id": "Q18", "type": "single", "required": true,
+          "showIf": {"q": "Q17", "notIn": ["no"]},
+          "prompt": "How would you describe your understanding of digital assets?",
+          "options": [
+            {"v": "none", "l": "I don't understand them", "i": "🌫️"},
+            {"v": "concept", "l": "I understand the basic concept", "i": "💡"},
+            {"v": "usage", "l": "I understand how they're used", "i": "🔧"},
+            {"v": "active", "l": "I actively use or work with them", "i": "⚙️"}
+          ]
+        },
+        {
+          "id": "Q19", "type": "multi", "required": true, "exclusive": ["none"],
+          "prompt": "Which of these have you heard of?",
+          "help": "Pick all that apply. Hover or tap ⓘ for a quick definition.",
+          "options": [
+            {"v": "crypto", "l": "Cryptocurrency", "tip": "Digital money secured by cryptography, such as Bitcoin, not issued by a central bank."},
+            {"v": "blockchain", "l": "Blockchain", "tip": "A shared digital record of transactions, copied across many computers, that is very hard to alter."},
+            {"v": "nft", "l": "NFTs", "tip": "Non-fungible tokens: unique digital certificates of ownership for a specific item, like art or a ticket."},
+            {"v": "stablecoin", "l": "Stablecoins", "tip": "Digital tokens designed to hold a steady value, usually pegged to a currency like the US dollar."},
+            {"v": "tokenization", "l": "Tokenization", "tip": "Representing ownership of a real asset (e.g. property, invoices) as digital tokens."},
+            {"v": "smartcontract", "l": "Smart contracts", "tip": "Code on a blockchain that runs automatically when agreed conditions are met."},
+            {"v": "digitalid", "l": "Digital identity", "tip": "A secure, verifiable digital version of who you are, used to prove identity online."},
+            {"v": "cbdc", "l": "Central bank digital currency (CBDC)", "tip": "A digital form of a country's official currency, issued by its central bank."},
+            {"v": "defi", "l": "Decentralised finance (DeFi)", "tip": "Financial services like lending or trading run by smart contracts instead of banks."},
+            {"v": "none", "l": "None of these"}
+          ]
+        },
+        {
+          "id": "Q20", "type": "multi", "required": true, "exclusive": ["none"],
+          "prompt": "Have you or your business ever…",
+          "help": "Pick all that apply.",
+          "options": [
+            {"v": "held", "l": "Bought or held cryptocurrency"},
+            {"v": "received", "l": "Received payment in crypto or stablecoins"},
+            {"v": "crossborder", "l": "Sent cross-border payments with stablecoins"},
+            {"v": "wallet", "l": "Used a crypto exchange or wallet"},
+            {"v": "tokenized", "l": "Explored tokenizing an asset"},
+            {"v": "none", "l": "None of these"}
+          ]
+        },
+        {
+          "id": "Q21", "type": "single", "required": true, "compact": true,
+          "prompt": "Would you consider accepting digital asset payments in the next 12 months?",
+          "options": [
+            {"v": "already", "l": "Already do"},
+            {"v": "yes", "l": "Yes"},
+            {"v": "maybe", "l": "Maybe"},
+            {"v": "no", "l": "No"}
+          ]
+        },
+        {
+          "id": "Q22", "type": "thisthat", "required": true,
+          "prompt": "Which is closer to your view?",
+          "options": [
+            {"v": "speculation", "l": "Digital assets are mostly speculation", "i": "🎰"},
+            {"v": "realuse", "l": "Digital assets have real business uses", "i": "🏗️"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quiz",
+      "title": "Quick 6",
+      "hook": "A tiny knowledge check. No pressure, and you'll learn something either way.",
+      "icon": "🎯",
+      "minutes": 1,
+      "insight": null,
+      "items": [
+        {
+          "id": "K1", "type": "quiz", "required": true, "answer": "true",
+          "prompt": "A blockchain is a shared record of transactions that is very hard to alter once written.",
+          "explain": "True. Copies of the record sit on many computers, so changing past entries would mean overriding most of the network.",
+          "flag": "REVIEW FOR ACCURACY"
+        },
+        {
+          "id": "K2", "type": "quiz", "required": true, "answer": "true",
+          "prompt": "Stablecoins are designed to keep a steady value, usually tied to a currency like the US dollar.",
+          "explain": "True. Most are backed by reserves such as cash or government bonds. \"Designed to\" matters, though: some have lost their peg.",
+          "flag": "REVIEW FOR ACCURACY"
+        },
+        {
+          "id": "K3", "type": "quiz", "required": true, "answer": "false",
+          "prompt": "If you lose the recovery phrase to a self-custody crypto wallet, your bank can recover it for you.",
+          "explain": "False. With self-custody, only you hold the keys. Lose the recovery phrase and the funds are usually gone for good.",
+          "flag": "REVIEW FOR ACCURACY"
+        },
+        {
+          "id": "K4", "type": "quiz", "required": true, "answer": "false",
+          "prompt": "A smart contract is a legal document signed digitally by a lawyer.",
+          "explain": "False. A smart contract is code that runs automatically when agreed conditions are met. It may or may not be legally binding.",
+          "flag": "REVIEW FOR ACCURACY"
+        },
+        {
+          "id": "K5", "type": "quiz", "required": true, "answer": "true",
+          "prompt": "\"Guaranteed high returns\" is a common sign of an investment scam.",
+          "explain": "True. Real investments carry risk. Guaranteed, high, fast returns are one of the most common red flags.",
+          "flag": "REVIEW FOR ACCURACY"
+        },
+        {
+          "id": "K6", "type": "quiz", "required": true, "answer": "true",
+          "prompt": "Tokenization means representing ownership of an asset, such as property, as a digital token.",
+          "explain": "True. Tokenization can make assets easier to divide, transfer and track, for example letting many people own a share of one building.",
+          "flag": "REVIEW FOR ACCURACY"
+        }
+      ]
+    },
+    {
+      "id": "regulation",
+      "title": "Rules of the game",
+      "hook": "Trust, protection and regulation.",
+      "icon": "⚖️",
+      "minutes": 2,
+      "insight": {
+        "title": "Did you know?",
+        "body": "Clear rules don't only protect consumers. They also tell businesses what's allowed, which is often what unlocks investment and adoption.",
+        "flag": "REVIEW FOR ACCURACY"
+      },
+      "items": [
+        {
+          "id": "Q23", "type": "rank", "required": true, "max": 3,
+          "prompt": "What concerns you most about digital assets?",
+          "help": "Tap your top 3 in order: 1 is the biggest concern.",
+          "options": [
+            {"v": "fraud", "l": "Fraud / scams", "i": "🎣"},
+            {"v": "education", "l": "Lack of education", "i": "📖"},
+            {"v": "regulation", "l": "Regulatory uncertainty", "i": "⚖️"},
+            {"v": "privacy", "l": "Privacy / security", "i": "🔐"},
+            {"v": "losing", "l": "Losing money", "i": "📉"},
+            {"v": "tech", "l": "Understanding the technology", "i": "🧩"},
+            {"v": "compliance", "l": "Business compliance", "i": "📑"},
+            {"v": "tax", "l": "Tax treatment", "i": "🧾"},
+            {"v": "other", "l": "Other", "i": "✨", "other": true}
+          ]
+        },
+        {
+          "id": "Q24", "type": "single", "required": true,
+          "prompt": "Before this survey, had you heard of the CLARITY Act?",
+          "options": [
+            {"v": "yes", "l": "Yes", "i": "👍"},
+            {"v": "no", "l": "No", "i": "🆕"},
+            {"v": "nameonly", "l": "I've heard the name but don't know what it is", "i": "🤨"}
+          ],
+          "explainer": {
+            "when": {"in": ["yes", "no", "nameonly"]},
+            "title": "The CLARITY Act, briefly",
+            "body": "The Digital Asset Market Clarity Act (CLARITY Act) is United States legislation that aims to set clear rules for digital asset markets, including which regulator oversees which kinds of digital assets and what protections consumers get. Because so much global digital asset activity touches US markets, its approach is closely watched worldwide.",
+            "flag": "VERIFY CURRENT STATUS"
+          }
+        },
+        {
+          "id": "Q25", "type": "scale", "required": true,
+          "prompt": "How familiar are you with the purpose of the CLARITY Act?",
+          "options": [
+            {"v": 1, "l": "Not familiar", "i": "🌫️"},
+            {"v": 2, "l": "Slightly", "i": "🌤️"},
+            {"v": 3, "l": "Somewhat", "i": "⛅"},
+            {"v": 4, "l": "Very familiar", "i": "☀️"}
+          ]
+        },
+        {
+          "id": "Q26", "type": "scale", "required": true,
+          "prompt": "How confident are you in understanding how digital asset regulation could affect businesses?",
+          "options": [
+            {"v": 1, "l": "Not confident", "i": "😟"},
+            {"v": 2, "l": "", "i": "😕"},
+            {"v": 3, "l": "", "i": "😐"},
+            {"v": 4, "l": "", "i": "🙂"},
+            {"v": 5, "l": "Very confident", "i": "😎"}
+          ]
+        },
+        {
+          "id": "Q27", "type": "single", "required": true, "compact": true,
+          "prompt": "If digital asset rules became clearer, how would that change your willingness to use them?",
+          "options": [
+            {"v": "much", "l": "Much more likely"},
+            {"v": "somewhat", "l": "Somewhat more likely"},
+            {"v": "nochange", "l": "No change"},
+            {"v": "less", "l": "Less likely"},
+            {"v": "unsure", "l": "Not sure"}
+          ]
+        },
+        {
+          "id": "Q28", "type": "multi", "required": true, "max": 2,
+          "prompt": "Who would you trust most to teach you about digital assets?",
+          "help": "Pick up to 2.",
+          "options": [
+            {"v": "government", "l": "Government / regulators"},
+            {"v": "banks", "l": "Banks"},
+            {"v": "universities", "l": "Universities"},
+            {"v": "associations", "l": "Professional associations"},
+            {"v": "experts", "l": "Independent experts"},
+            {"v": "techcos", "l": "Tech companies"},
+            {"v": "peers", "l": "Peers / other business owners"},
+            {"v": "media", "l": "Media"}
+          ]
+        },
+        {
+          "id": "Q29", "type": "multi", "required": true, "exclusive": ["noseek"],
+          "prompt": "Where do you currently get information about technology and financial regulation?",
+          "help": "Pick all that apply.",
+          "options": [
+            {"v": "social", "l": "Social media"},
+            {"v": "news", "l": "News outlets"},
+            {"v": "courses", "l": "Online courses"},
+            {"v": "orgs", "l": "Professional organisations"},
+            {"v": "advisors", "l": "Financial advisors"},
+            {"v": "govsites", "l": "Government websites"},
+            {"v": "friends", "l": "Friends / family"},
+            {"v": "podcasts", "l": "Podcasts / YouTube"},
+            {"v": "noseek", "l": "I don't actively seek it"},
+            {"v": "other", "l": "Other", "other": true}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "readiness",
+      "title": "Where next?",
+      "hook": "Your readiness and how you like to learn.",
+      "icon": "🧭",
+      "minutes": 2,
+      "insight": null,
+      "items": [
+        {
+          "id": "Q30", "type": "single", "required": true, "compact": true,
+          "prompt": "Has your business explored using any emerging technologies?",
+          "options": [
+            {"v": "yes", "l": "Yes"},
+            {"v": "considering", "l": "Considering it"},
+            {"v": "no", "l": "No"}
+          ]
+        },
+        {
+          "id": "Q31", "type": "slider", "required": true, "min": 1, "max": 10, "default": 5,
+          "prompt": "How ready is your business for the digital economy today?",
+          "bands": [
+            {"max": 3, "l": "Just starting", "i": "🌱"},
+            {"max": 6, "l": "Getting there", "i": "🚶"},
+            {"max": 8, "l": "Well on the way", "i": "🏃"},
+            {"max": 10, "l": "Leading", "i": "🏆"}
+          ]
+        },
+        {
+          "id": "Q32", "type": "multi", "required": true, "exclusive": ["none"],
+          "prompt": "Which areas would you like more education on?",
+          "help": "Pick all that apply.",
+          "options": [
+            {"v": "blockchain", "l": "Blockchain"},
+            {"v": "digitalassets", "l": "Digital assets"},
+            {"v": "ai", "l": "AI tools"},
+            {"v": "smartcontracts", "l": "Smart contracts"},
+            {"v": "payments", "l": "Digital payments"},
+            {"v": "cyber", "l": "Cybersecurity"},
+            {"v": "consumer", "l": "Consumer protection"},
+            {"v": "compliance", "l": "Regulatory compliance"},
+            {"v": "marketing", "l": "Digital marketing"},
+            {"v": "data", "l": "Data & analytics"},
+            {"v": "none", "l": "None"},
+            {"v": "other", "l": "Other", "other": true}
+          ]
+        },
+        {
+          "id": "Q33", "type": "multi", "required": true, "max": 3,
+          "prompt": "What learning formats would be most valuable to you?",
+          "help": "Pick up to 3.",
+          "options": [
+            {"v": "workshops", "l": "In-person workshops"},
+            {"v": "live", "l": "Live virtual sessions"},
+            {"v": "selfpaced", "l": "Self-paced online courses"},
+            {"v": "briefings", "l": "Executive briefings"},
+            {"v": "podcasts", "l": "Podcasts"},
+            {"v": "videos", "l": "Videos / documentaries"},
+            {"v": "guides", "l": "Written guides / reports"},
+            {"v": "consulting", "l": "One-on-one consulting"},
+            {"v": "peer", "l": "Peer learning circles"}
+          ]
+        },
+        {
+          "id": "Q34", "type": "single", "required": true, "compact": true,
+          "prompt": "How much time could you commit to learning each month?",
+          "options": [
+            {"v": "lt1", "l": "Less than 1 hour"},
+            {"v": "1-3", "l": "1–3 hours"},
+            {"v": "4-8", "l": "4–8 hours"},
+            {"v": "8+", "l": "8+ hours"}
+          ]
+        },
+        {
+          "id": "Q35", "type": "single", "required": true,
+          "prompt": "Would you join an education programme on digital assets, consumer protection and business readiness?",
+          "options": [
+            {"v": "yes", "l": "Yes, count me in", "i": "🙌"},
+            {"v": "maybe", "l": "Maybe", "i": "🤔"},
+            {"v": "no", "l": "No", "i": "🙅"}
+          ]
+        },
+        {
+          "id": "Q36", "type": "longtext", "required": false,
+          "prompt": "What questions do you have about digital assets, technology or regulation that you'd like answered?",
+          "help": "Optional, but this directly shapes what we teach.",
+          "placeholder": "e.g. How do I accept stablecoin payments safely? What would the CLARITY Act mean for my business? Which AI tools are worth paying for?"
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "title": "Stay in touch",
+      "hook": "Optional. Skip any of these if you prefer.",
+      "icon": "💌",
+      "minutes": 1,
+      "insight": null,
+      "contact": true,
+      "items": [
+        {"id": "Q37", "type": "text", "required": false, "prompt": "What's your name?", "placeholder": "Your name", "autocomplete": "name"},
+        {"id": "Q38", "type": "email", "required": false, "prompt": "And your email?", "placeholder": "you@business.com", "autocomplete": "email"},
+        {
+          "id": "Q39", "type": "toggle", "required": false,
+          "prompt": "Would you like updates on The Knowledge Gap findings and education programmes?",
+          "help": "We'll only use your email for this, and you can unsubscribe at any time."
+        },
+        {
+          "id": "Q40", "type": "toggle", "required": false,
+          "prompt": "Can we contact you for a 15-minute follow-up interview?"
+        }
+      ]
+    }
+  ]
+}

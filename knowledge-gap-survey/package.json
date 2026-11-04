@@ -1,0 +1,13 @@
+{
+  "name": "knowledge-gap-survey",
+  "private": true,
+  "type": "module",
+  "description": "The Knowledge Gap: interactive digital readiness survey",
+  "scripts": {
+    "dev": "netlify dev",
+    "placeholders": "grep -rnoE '\"flag\": \"[A-Z ]+\"' public/data/questions.json"
+  },
+  "dependencies": {
+    "@netlify/blobs": "^8.1.0"
+  }
+}
