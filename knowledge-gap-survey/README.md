@@ -75,7 +75,11 @@ ADMIN_PASSWORD=localtest npx netlify dev --offline
 
 ## Deploying
 
-This folder has its own Netlify link (`.netlify/state.json`, project `knowledge-gap-survey`). **Deploy from this folder, never from the parent `peniworks` folder**, because the parent is linked to a different Netlify project.
+**Auto-deploys are on.** Any push to the `knowledge-gap-survey` branch of stukura/peni-wellness builds and deploys to https://knowledge-gap-survey.netlify.app. Netlify builds from the `knowledge-gap-survey/` base folder. Pushes to other branches are ignored.
+
+This works through a manual Git link: a read-only deploy key on the repo ("Netlify knowledge-gap-survey") plus a GitHub push webhook to `api.netlify.com/hooks/...`.
+
+To deploy by hand, run this from **this folder**, never from the parent `peniworks` folder (the parent is linked to a different Netlify project):
 
 ```
 npx netlify deploy --prod
